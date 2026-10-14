@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fatema AlQallaf — Data Scientist &amp; Business Analytics</title>
-<meta name="description" content="Portfolio of Fatema AlQallaf, Data Scientist & Business Analytics Professional. Machine learning, statistical analysis, and data visualization projects.">
+<title>Fatema AlQallaf — Quantitative Data Scientist &amp; Risk Analytics</title>
+<meta name="description" content="Portfolio of Fatema AlQallaf, Quantitative Data Scientist in financial risk analytics. Automated ETL pipelines, credit risk modeling, machine learning, and data visualization projects.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -534,7 +534,7 @@
   }
   .skills-groups{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:24px;
   }
   .skill-card{
@@ -554,9 +554,9 @@
     color:var(--teal-dim);
     margin-bottom:16px;
   }
-  .skill-card:nth-child(2) .sk-index{ color:var(--purple-dim); }
-  .skill-card:nth-child(2):hover{ border-color:rgba(167,139,250,0.35); }
-  .skill-card:nth-child(2) .tag:hover{
+  .skill-card:nth-child(even) .sk-index{ color:var(--purple-dim); }
+  .skill-card:nth-child(even):hover{ border-color:rgba(167,139,250,0.35); }
+  .skill-card:nth-child(even) .tag:hover{
     border-color:var(--purple);
     color:var(--purple);
     background:rgba(167,139,250,0.08);
@@ -589,6 +589,92 @@
 
   @media (max-width:880px){
     .skills-groups{ grid-template-columns:1fr; }
+  }
+
+  /* ============================================
+     EXPERIENCE
+  ============================================ */
+  .experience{ padding:110px 0 70px; }
+  .exp-list{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    position:relative;
+  }
+  .exp-item{
+    display:grid;
+    grid-template-columns:190px 1fr;
+    gap:32px;
+    align-items:start;
+  }
+  .exp-date{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--text-muted);
+    padding-top:30px;
+    letter-spacing:0.02em;
+  }
+  .exp-date .now{
+    display:inline-block;
+    margin-top:8px;
+    font-size:11px;
+    color:var(--teal);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .exp-card{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px 30px;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .exp-card:hover{
+    border-color:var(--border-strong);
+    transform:translateY(-3px);
+  }
+  .exp-item.current .exp-card{ border-color:rgba(46,230,197,0.28); }
+  .exp-card h3{
+    font-size:19px;
+    color:var(--text);
+    margin-bottom:6px;
+    line-height:1.35;
+  }
+  .exp-org{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--teal);
+    margin-bottom:18px;
+  }
+  .exp-card ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .exp-card li{
+    position:relative;
+    padding-left:20px;
+    color:var(--text-muted);
+    font-size:14.5px;
+    line-height:1.7;
+  }
+  .exp-card li::before{
+    content:'▹';
+    position:absolute;
+    left:0;
+    color:var(--teal);
+    font-family:var(--font-mono);
+  }
+  .exp-card li strong{ color:var(--text); font-weight:600; }
+  .exp-item:nth-child(even) .exp-org,
+  .exp-item:nth-child(even) .exp-card li::before{ color:var(--purple); }
+
+  @media (max-width:880px){
+    .exp-item{ grid-template-columns:1fr; gap:10px; }
+    .exp-date{ padding-top:0; }
   }
 
   /* ============================================
@@ -840,7 +926,7 @@
 
   @media (max-width:600px){
     .wrap{ padding:0 22px; }
-    .about,.skills,.projects,.contact{ padding-top:80px; padding-bottom:80px; }
+    .about,.experience,.skills,.projects,.contact{ padding-top:80px; padding-bottom:80px; }
     .hero-scroll{ display:none; }
   }
 </style>
@@ -854,6 +940,7 @@
     <a href="#top" class="logo"><span class="dot"></span>Fatema<span class="dim">.AlQallaf</span></a>
     <nav class="links" id="navLinks">
       <a href="#about" data-nav>About</a>
+      <a href="#experience" data-nav>Experience</a>
       <a href="#skills" data-nav>Skills</a>
       <a href="#projects" data-nav>Projects</a>
       <a href="#contact" data-nav>Contact</a>
@@ -871,10 +958,10 @@
   <section class="hero" id="hero">
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="wrap hero-inner">
-      <div class="hero-kicker"><span class="blink"></span>Available for data science &amp; analytics roles</div>
+      <div class="hero-kicker"><span class="blink"></span>Risk analytics &amp; data science · Bahrain</div>
       <h1>Turning raw data into <span class="accent">decisions</span> that hold up.</h1>
       <div class="hero-role">&gt; <span id="typedRole"></span><span class="cursor"></span></div>
-      <p class="hero-bio">I'm Fatema AlQallaf — a final-year BSc Data Science &amp; Business Analytics student at the University of London, sharpened by intensive project-based training at General Assembly Bahrain. I care about what happens after the model runs: the insight someone actually acts on.</p>
+      <p class="hero-bio">I'm Fatema AlQallaf — a Quantitative Data Scientist working in financial risk analytics at Bahrain Islamic Bank, with a BSc in Data Science &amp; Business Analytics from the University of London and project-based training from General Assembly Bahrain. I care about what happens after the model runs: the insight someone actually acts on.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -890,19 +977,19 @@
       <div class="about-grid">
         <div class="about-panel reveal">
           <div class="term-bar"><span></span><span></span><span></span></div>
-          <div class="row"><span>role</span><span class="val-teal">Data Scientist</span></div>
-          <div class="row"><span>focus</span><span>Business Analytics</span></div>
+          <div class="row"><span>role</span><span class="val-teal">Quantitative Data Scientist</span></div>
+          <div class="row"><span>focus</span><span>Financial Risk Analytics</span></div>
+          <div class="row"><span>current</span><span class="val-teal">Graduate Trainee · BisB</span></div>
           <div class="row"><span>education</span><span>BSc Data Science, Univ. of London</span></div>
           <div class="row"><span>training</span><span>General Assembly Bahrain</span></div>
-          <div class="row"><span>status</span><span class="val-teal">graduating · 2026</span></div>
           <div class="row"><span>based_in</span><span>Bahrain</span></div>
         </div>
         <div class="about-text reveal">
           <h2 class="section-title" style="margin-bottom:24px;">Curious about the "why" behind the numbers.</h2>
-          <p>I'm a final-year <strong>BSc Data Science &amp; Business Analytics</strong> student at the University of London, with intensive, project-based training from <strong>General Assembly Bahrain</strong> layered on top of the theory.</p>
+          <p>I'm a <strong>Quantitative Data Scientist</strong> with a rigorous academic foundation in statistical modeling from the <strong>University of London</strong> (BSc Data Science &amp; Business Analytics), now applying it to <strong>financial risk analytics</strong> as a Graduate Trainee at <strong>Bahrain Islamic Bank</strong>.</p>
           <p>What draws me to this field is simple: complex datasets almost always hold a signal worth finding. I like the process of getting there — cleaning the mess, testing the assumption, comparing the model that looks good against the model that actually generalizes — and I like even more handing someone a result they can trust and act on.</p>
-          <p>Across coursework and independent projects, I've worked the full pipeline: from ambiguous raw data through EDA, feature engineering, modeling, and evaluation, in Python, R, and Tableau.</p>
-          <div class="highlight-line">Currently sharpening classification, clustering, and forecasting work through real datasets — not toy problems.</div>
+          <p>At BisB, that means replacing manual Excel workflows with automated Python and Power BI solutions. Before that, through coursework, intensive training at <strong>General Assembly Bahrain</strong>, and independent projects, I worked the full pipeline — from ambiguous raw data through EDA, feature engineering, modeling, and evaluation, in Python, R, and Tableau — and mentored bootcamp students as an Instructor Associate.</p>
+          <div class="highlight-line">Currently focused on automating banking data pipelines and building predictive models for credit risk.</div>
 
           <div class="credentials">
             <div class="cred-label">// certifications</div>
@@ -926,12 +1013,60 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="eyebrow reveal">02 — Experience</div>
+      <h2 class="section-title reveal">Where the work happens.</h2>
+      <p class="section-sub reveal">From bootcamp projects to mentoring other analysts to automating risk reporting inside a bank.</p>
+
+      <div class="exp-list">
+
+        <div class="exp-item current reveal">
+          <div class="exp-date">Sep 2026 – Present<br><span class="now">● Current</span></div>
+          <div class="exp-card">
+            <h3>Graduate Trainee – Risk Analytics &amp; Data Science</h3>
+            <div class="exp-org">BisB (Bahrain Islamic Bank) · Bahrain</div>
+            <ul>
+              <li><strong>ETL &amp; Data Engineering.</strong> Replaced manual Excel workflows with Python scripts that synchronize data automatically every day.</li>
+              <li><strong>Risk &amp; Credit Dashboards.</strong> Built automated Power BI dashboards with Power Query, consolidating data from several banking sources to track DPD, TWC utilization, and revolving balances.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-date">Jun 2026 – Sep 2026</div>
+          <div class="exp-card">
+            <h3>Instructor Associate – Data Science</h3>
+            <div class="exp-org">General Assembly (GA) · Bahrain</div>
+            <ul>
+              <li><strong>Mentorship &amp; Technical Instruction.</strong> Supported a Data Science Immersive cohort through daily code reviews and hands-on technical help with Python, problem-solving, and machine learning.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-date">Jul 2025 – Jan 2026</div>
+          <div class="exp-card">
+            <h3>Data Science Immersive Fellow</h3>
+            <div class="exp-org">General Assembly (GA) · Bahrain</div>
+            <ul>
+              <li><strong>Credit Risk Modeling.</strong> Built Random Forest and Bagging models to predict loan approvals from financial data, evaluated on accuracy, precision, and F1-score.</li>
+              <li><strong>Business Analytics.</strong> Created interactive Tableau dashboards for multi-year sales and profitability forecasting. Applied OLS and logistic regression to airline data to predict flight diversions.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section class="skills" id="skills">
     <div class="wrap">
-      <div class="eyebrow reveal">02 — Skills</div>
+      <div class="eyebrow reveal">03 — Skills</div>
       <h2 class="section-title reveal">A toolkit built for the full pipeline.</h2>
-      <p class="section-sub reveal">From first cleaning pass to the dashboard that ends up in front of a stakeholder.</p>
+      <p class="section-sub reveal">From the first data pull to the automated dashboard that ends up in front of a stakeholder.</p>
       <div class="skills-groups">
         <div class="skill-card reveal">
           <div class="sk-index">// languages &amp; tools</div>
@@ -939,14 +1074,27 @@
           <div class="tag-list">
             <span class="tag">Python</span>
             <span class="tag">R</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">VDI Environments</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="sk-index">// pipelines &amp; bi</div>
+          <h3>Data Engineering &amp; BI</h3>
+          <div class="tag-list">
+            <span class="tag">Data Engineering (ETL)</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Power Query</span>
             <span class="tag">Tableau</span>
-            <span class="tag">GitHub</span>
           </div>
         </div>
         <div class="skill-card reveal">
           <div class="sk-index">// modeling</div>
-          <h3>Machine Learning</h3>
+          <h3>Machine Learning &amp; Risk</h3>
           <div class="tag-list">
+            <span class="tag">Financial Risk Modeling</span>
+            <span class="tag">Predictive Analytics</span>
             <span class="tag">Classification</span>
             <span class="tag">Clustering</span>
             <span class="tag">Regression</span>
@@ -970,7 +1118,7 @@
   <!-- PROJECTS -->
   <section class="projects" id="projects">
     <div class="wrap">
-      <div class="eyebrow reveal">03 — Projects</div>
+      <div class="eyebrow reveal">04 — Projects</div>
       <h2 class="section-title reveal">Selected work.</h2>
       <p class="section-sub reveal">Four projects spanning public-sector analytics, operations forecasting, commercial BI, and credit risk.</p>
 
@@ -1047,15 +1195,15 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap contact-inner">
-      <div class="eyebrow reveal">04 — Contact</div>
+      <div class="eyebrow reveal">05 — Contact</div>
       <h2 class="reveal">Let's talk about your <span class="accent">data</span>.</h2>
-      <p class="lead reveal">Open to data science and business analytics roles, collaborations, and conversations about interesting problems.</p>
+      <p class="lead reveal">Open to data science and risk analytics conversations, collaborations, and interesting problems.</p>
       <a class="contact-email reveal" href="mailto:fatimaalgallaf242@gmail.com">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
         fatimaalgallaf242@gmail.com
       </a>
       <div class="social-row reveal">
-        <a class="social-link" href="www.linkedin.com/in/fatema-alqallaf-04040abc" target="_blank" rel="noopener noreferrer">
+        <a class="social-link" href="https://www.linkedin.com/in/fatema-alqallaf-04040abc" target="_blank" rel="noopener noreferrer">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12M7.12 20.45H3.56V9h3.56z"/></svg>
           LinkedIn
         </a>
@@ -1164,7 +1312,8 @@
 
   /* ---------- Typing effect for role ---------- */
   var roles = [
-    'Data Scientist',
+    'Quantitative Data Scientist',
+    'Risk Analytics Practitioner',
     'Business Analytics Professional',
     'Machine Learning Practitioner',
     'Statistical Storyteller'
